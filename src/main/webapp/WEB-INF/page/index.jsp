@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<c:set var="ctx" value="${pageContext.request.contextPath}"/>
 <html>
   <head>
     <title>$Title$</title>
@@ -18,7 +19,7 @@
       var password= $('#password').val();
       $.ajax({
           type: "post",
-          url:'user/addUser',
+          url:'${ctx}user/addUser',
           data:{username:username,password:password},
           success:function (data) {
               console.log(data);
